@@ -42,11 +42,26 @@ class Board:
             print()
 
     def isWin(self, val):
+
+        # To check diagonal lines of the cube
+
+        if self.board[0][0][0] == val & self.board[1][1][1] == val & self.board[2][2][2] == val:
+            return True
+
+        if self.board[0][0][2] == val & self.board[1][1][1] == val & self.board[2][2][0] == val:
+            return True
+
+        if self.board[2][0][0] == val & self.board[1][1][1] == val & self.board[0][2][2] == val:
+            return True
+
+        if self.board[2][0][2] == val & self.board[1][1][1] == val & self.board[0][2][0] == val:
+            return True
+
+        # To check straight lines
+
         poss = False
         for i in range(0, 3):
             for j in range(0, 3):
-
-                # To check straight lines
 
                 temp = True
                 for k in range(0, 3):
@@ -66,18 +81,25 @@ class Board:
                         temp = False
                 poss |= temp
 
-                # To check diagonal lines of the cube
+        # To check 2D Diagonal lines
 
-                if self.board[0][0][0] == val & self.board[1][1][1] == val & self.board[2][2][2] == val:
-                    return True
+        for i in range(0, 3):
+            if self.board[0][0][i] == val & self.board[1][1][i] == val & self.board[2][2][i] == val:
+                return True
 
-                if self.board[0][0][2] == val & self.board[1][1][1] == val & self.board[2][2][0] == val:
-                    return True
+            if self.board[2][0][i] == val & self.board[1][1][i] == val & self.board[0][2][i] == val:
+                return True
 
-                if self.board[2][0][0] == val & self.board[1][1][1] == val & self.board[0][2][2] == val:
-                    return True
+            if self.board[0][i][0] == val & self.board[1][i][1] == val & self.board[2][i][2] == val:
+                return True
 
-                if self.board[2][0][2] == val & self.board[1][1][1] == val & self.board[0][2][0] == val:
-                    return True
+            if self.board[2][i][0] == val & self.board[1][i][1] == val & self.board[0][i][2] == val:
+                return True
+
+            if self.board[i][0][0] == val & self.board[i][1][1] == val & self.board[i][2][2] == val:
+                return True
+
+            if self.board[i][2][0] == val & self.board[i][1][1] == val & self.board[i][0][2] == val:
+                return True
 
         return poss
