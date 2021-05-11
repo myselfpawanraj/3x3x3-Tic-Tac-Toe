@@ -2,13 +2,7 @@ from Board import Board
 import helper
 import MiniMax
 import pygame
-
-
-def initialise():
-    global board
-    global screen
-    board = Board()
-
+import time
 
 board = Board()
 pygame.init()
@@ -17,14 +11,18 @@ programIcon = pygame.image.load('icon.png')
 pygame.display.set_icon(programIcon)
 size = (775, 775)
 screen = pygame.display.set_mode(size)
-initialise()
+font = pygame.font.SysFont("comicsans", 40)
+start = time.time()
 
 turn = 1
 playing = True
 x, y, z = (-1, -1, -1)
+you = 0
+me = 0
 
 while playing:
     helper.update(screen, board)
+    play_time = int(round(time.time() - start))
     for event in pygame.event.get():
 
         if event.type == pygame.QUIT:
@@ -38,10 +36,12 @@ while playing:
                 if (0 <= x <= 2) & (0 <= y <= 2) & (0 <= z <= 2):
                     if board.board[x][y][z] == 0 and turn == 1:
                         board.board[x][y][z] = 1
+                        if board.isWin(1):
+                            you += 1
                         turn = 2
             elif event.button == 3:
                 if (not board.isSpace()) | board.isWin(1) | board.isWin(2):
-                    initialise()
+                    board = Board()
                     turn = 1
 
     if (0 <= x <= 2) & (0 <= y <= 2) & (0 <= z <= 2):
@@ -49,37 +49,39 @@ while playing:
         helper.drawSelected(x, y, z, screen)
 
     if board.isWin(1):
-        font = pygame.font.Font('freesansbold.ttf', 32)
-        text = font.render(' X has won the game! Right Click to restart ', True, helper.YELLOW, helper.LGREY)
+        text = font.render(' You have won the game ! Right Click to restart ', True, helper.YELLOW, helper.LGREY)
         textRect = text.get_rect()
-        textRect.center = (350, 25)
+        textRect.center = (775/2, 25)
         screen.blit(text, textRect)
-        print('User Won!')
         turn = 0
 
     elif turn == 2:
         a, b, c = MiniMax.findMax(board.board)
         if (0 <= a <= 2) & (0 <= b <= 2) & (0 <= c <= 2):
             board.board[a][b][c] = 2
+            if board.isWin(2):
+                me += 1
         turn = 1
 
     elif not board.isSpace():
-        font = pygame.font.Font('freesansbold.ttf', 32)
         text = font.render('Draw , Right Click to restart', True, helper.LGREY, helper.LGREY)
         textRect = text.get_rect()
-        textRect.center = (350, 25)
+        textRect.center = (775/2, 25)
         screen.blit(text, textRect)
         turn = 0
 
     if board.isWin(2):
-        font = pygame.font.Font('freesansbold.ttf', 32)
-        text = font.render(' O has won the game! Right Click to restart ', True, helper.ORANGE, helper.LGREY)
+        text = font.render(' CPU has won the game ! Right Click to restart ', True, helper.ORANGE, helper.LGREY)
         textRect = text.get_rect()
-        textRect.center = (350, 25)
+        textRect.center = (775/2, 25)
         screen.blit(text, textRect)
-        print('User Won!')
         turn = 0
 
+    screen.blit(font.render("Time: " + helper.format_time(play_time),
+                            True, helper.GREY), (550, 740))
+
+    screen.blit(font.render(" You : " + str(you) + "   CPU : " + str(me) + ' ',
+                            True, helper.GREY), (50, 740))
     pygame.display.flip()
     pygame.time.Clock().tick(60)
 

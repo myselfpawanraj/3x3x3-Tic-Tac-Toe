@@ -12,10 +12,12 @@ RED = (255, 0, 0)
 BLUE = (10, 100, 255)
 GREY = (128, 128, 128)
 CYAN = (5, 204, 171)
-LGREY = (51,56,63)
+LGREY = (51, 56, 63)
 DARK_GREY = (33, 38, 40)
 YELLOW = (255, 217, 0)
 ORANGE = (253, 104, 20)
+BOXFRONT = (117, 219, 27)
+BOXBACK = (17, 119, 45)
 
 
 def drawO(i, j, k, screen):
@@ -44,13 +46,13 @@ def drawSelected(i, j, k, screen):
 def update(screen, board):
     screen.fill(DARK_GREY)
     for i in range(3):
-        pygame.draw.line(screen, GREY, [50 + 3 * WI * i, 50 + 3 * WI * i],
+        pygame.draw.line(screen, BOXBACK, [50 + 3 * WI * i, 50 + 3 * WI * i],
                          [50 + 3 * WI * i, 50 + 3 * WI * i + 3 * WI], 2)
-        pygame.draw.line(screen, GREY, [50 + 3 * WI * i, 50 + 3 * WI * i],
+        pygame.draw.line(screen, BOXBACK, [50 + 3 * WI * i, 50 + 3 * WI * i],
                          [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i], 2)
-        pygame.draw.line(screen, GREY, [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i + 3 * WI],
+        pygame.draw.line(screen, BOXFRONT, [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i + 3 * WI],
                          [50 + 3 * WI * i, 50 + 3 * WI * i + 3 * WI], 2)
-        pygame.draw.line(screen, GREY, [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i + 3 * WI],
+        pygame.draw.line(screen, BOXFRONT, [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i + 3 * WI],
                          [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i], 2)
         for j in range(2):
             pygame.draw.line(screen, CYAN, [50 + (j + 1) * WI + 3 * WI * i, 50 + 3 * WI * i],
@@ -76,3 +78,13 @@ def getPoints(event):
     y = int(int(int(event.pos[1] - 50) / WI) % 3)
     z = int(int(int(event.pos[0] - 50) / WI) / 3)
     return x, y, z
+
+
+def format_time(secs):
+    secs = int(secs)
+    sec = secs % 60
+    minute = secs // 60
+    hour = minute // 60
+
+    mat = " " + str(minute) + ":" + str(sec)
+    return mat
