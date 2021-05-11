@@ -71,7 +71,7 @@ while playing:
         turn = 0
 
     if board.isWin(2):
-        text = font.render(' CPU has won the game ! Right Click to restart ', True, helper.ORANGE, helper.LGREY)
+        text = font.render(' Bot has won the game ! Right Click to restart ', True, helper.ORANGE, helper.LGREY)
         textRect = text.get_rect()
         textRect.center = (775/2, 25)
         screen.blit(text, textRect)
@@ -80,7 +80,7 @@ while playing:
     screen.blit(font.render("Time: " + helper.format_time(play_time),
                             True, helper.GREY), (550, 740))
 
-    screen.blit(font.render(" You : " + str(you) + "   CPU : " + str(me) + ' ',
+    screen.blit(font.render(" You: " + str(you) + "   Bot: " + str(me) + ' ',
                             True, helper.GREY), (50, 740))
     pygame.display.flip()
     pygame.time.Clock().tick(60)

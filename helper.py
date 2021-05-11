@@ -46,14 +46,14 @@ def drawSelected(i, j, k, screen):
 def update(screen, board):
     screen.fill(DARK_GREY)
     for i in range(3):
-        pygame.draw.line(screen, BOXBACK, [50 + 3 * WI * i, 50 + 3 * WI * i],
-                         [50 + 3 * WI * i, 50 + 3 * WI * i + 3 * WI], 2)
-        pygame.draw.line(screen, BOXBACK, [50 + 3 * WI * i, 50 + 3 * WI * i],
-                         [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i], 2)
+        pygame.draw.line(screen, BOXFRONT, [50 + 3 * WI * i, 50 + 3 * WI * i],
+                         [50 + 3 * WI * i, 50 + 3 * WI * i + 3 * WI], 1)
+        pygame.draw.line(screen, BOXFRONT, [50 + 3 * WI * i, 50 + 3 * WI * i],
+                         [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i], 1)
         pygame.draw.line(screen, BOXFRONT, [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i + 3 * WI],
-                         [50 + 3 * WI * i, 50 + 3 * WI * i + 3 * WI], 2)
+                         [50 + 3 * WI * i, 50 + 3 * WI * i + 3 * WI], 4)
         pygame.draw.line(screen, BOXFRONT, [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i + 3 * WI],
-                         [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i], 2)
+                         [50 + 3 * WI * i + 3 * WI, 50 + 3 * WI * i], 4)
         for j in range(2):
             pygame.draw.line(screen, CYAN, [50 + (j + 1) * WI + 3 * WI * i, 50 + 3 * WI * i],
                              [50 + (j + 1) * WI + 3 * WI * i, 50 + 3 * WI * i + 3 * WI], 10)
