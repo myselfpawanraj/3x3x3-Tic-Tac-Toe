@@ -1,13 +1,7 @@
 from Board import Board
-from helper import WI
 import helper
 import MiniMax
 import pygame
-
-board = Board()
-pygame.init()
-size = (775, 775)
-screen = pygame.display.set_mode(size)
 
 
 def initialise():
@@ -16,10 +10,18 @@ def initialise():
     board = Board()
 
 
+board = Board()
+pygame.init()
+pygame.display.set_caption("3x3x3 TTT ~ by Pawan Raj")
+programIcon = pygame.image.load('icon.png')
+pygame.display.set_icon(programIcon)
+size = (775, 775)
+screen = pygame.display.set_mode(size)
+initialise()
+
 playing = True
 x, y, z = (-1, -1, -1)
 turn = 1
-initialise()
 
 while playing:
     helper.update(screen, board)
@@ -43,36 +45,27 @@ while playing:
                     turn = 0
 
     if (0 <= x <= 2) & (0 <= y <= 2) & (0 <= z <= 2):
-        print(str(x) + str(y) + str(z))
+        # print(str(x) + str(y) + str(z))
         helper.drawSelected(x, y, z, screen)
-
-    # x = 0  # int(input('input x '))
-    # y = 0  # int(input('input y '))
-    # z = 0  # int(input('input z '))
-    #
-    # board.board[z][y][x] = 1
-
-    # if board.isWin(1):
-    #     print('User Won!')
-    #     break
-    #
-    # if not board.isSpace():
-    #     print('Draw Occurred!')
-    #     break
 
     if turn == 2:
         a, b, c = MiniMax.findMax(board.board)
-        board.board[a][b][c] = 2
+        if (0 <= a <= 2) & (0 <= b <= 2) & (0 <= c <= 2):
+            board.board[a][b][c] = 2
         turn = 1
-    # board.viewBoard()
 
-    # if not board.isSpace():
-    #     print('Draw Occurred!')
-    #     break
-    #
-    # if board.isWin(2):
-    #     print('CPU Won!')
-    #     break
+    if board.isWin(1):
+        print('User Won!')
+        break
+
+    if not board.isSpace():
+        print('Draw Occurred!')
+        break
+
+    if board.isWin(2):
+        print('CPU Won!')
+        break
+
     pygame.display.flip()
     pygame.time.Clock().tick(60)
 
