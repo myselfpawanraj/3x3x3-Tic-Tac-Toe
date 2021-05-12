@@ -1,0 +1,10 @@
+Board.py
+MiniMax.py
+README.md
+helper.py
+main.py
+setup.py
+3D_Tic_Tac_Toe_main.egg-info/PKG-INFO
+3D_Tic_Tac_Toe_main.egg-info/SOURCES.txt
+3D_Tic_Tac_Toe_main.egg-info/dependency_links.txt
+3D_Tic_Tac_Toe_main.egg-info/top_level.txt

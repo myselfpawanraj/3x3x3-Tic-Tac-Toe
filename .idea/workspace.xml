@@ -2,8 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37f61239-df4a-42b7-8889-69c38024bb58" name="Default Changelist" comment="C++ file added">
+      <change afterPath="$PROJECT_DIR$/3D_Tic_Tac_Toe_main.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3D_Tic_Tac_Toe_main.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3D_Tic_Tac_Toe_main.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/lib/Board.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/lib/MiniMax.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/lib/helper.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/lib/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/3D_Tic_Tac_Toe_main-1.0-py3.8.egg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/3D_Tic_Tac_Toe_main-1.0-py3.8.egg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/easy-install.pth" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniMax" beforeDir="false" afterPath="$PROJECT_DIR$/Programme" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniMax.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MiniMax.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniMax.py" beforeDir="false" afterPath="$PROJECT_DIR$/MiniMax.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cppexe.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Programme.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scratch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/view.py" beforeDir="false" afterPath="$PROJECT_DIR$/3D_Tic_Tac_Toe_main.egg-info/dependency_links.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620829610151</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="C++ file added">
+      <created>1620830027038</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1620830027038</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -134,17 +134,17 @@ int32_t main() {
 			board[i][j][k] = '0';			
 		}
 	}
-	cout << a[0] <<"\n";
-	cout << a[1] <<"\n";
-	cout << a[2] <<"\n";
+	// cout << a[0] <<"\n";
+	// cout << a[1] <<"\n";
+	// cout << a[2] <<"\n";
 	// cout << "\n\n";
 	
-	// board[a[0]][a[1]][a[2]] = '2';
-	// F(i, N) F(j, N) {
-		// F(k, N){
-			// cout << board[i][j][k] <<" ";
-		// }
-		// cout << '\n';
-	// }
+	board[a[0]][a[1]][a[2]] = '2';
+	F(i, N) F(j, N) {
+		F(k, N){
+			cout << board[i][j][k] <<" ";
+		}
+		cout << '\n';
+	}
     return 0;
 }
