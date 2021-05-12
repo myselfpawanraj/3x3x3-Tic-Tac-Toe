@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37f61239-df4a-42b7-8889-69c38024bb58" name="Default Changelist" comment="UI improved">
-      <change afterPath="$PROJECT_DIR$/MiniMax.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cppexe.exe" afterDir="false" />
+    <list default="true" id="37f61239-df4a-42b7-8889-69c38024bb58" name="Default Changelist" comment="C++ file added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MiniMax.py" beforeDir="false" afterPath="$PROJECT_DIR$/MiniMax.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +148,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620800936046</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="C++ file added">
+      <created>1620829344580</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620829344580</updated>
+    </task>
+    <task id="LOCAL-00012" summary="C++ file added">
+      <created>1620829610151</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620829610151</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -174,6 +184,7 @@
     <MESSAGE value="GUI initiated!" />
     <MESSAGE value="UI improved" />
     <MESSAGE value="UI improve" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI improve" />
+    <MESSAGE value="C++ file added" />
+    <option name="LAST_COMMIT_MESSAGE" value="C++ file added" />
   </component>
 </project>
