@@ -2,21 +2,37 @@ import os
 
 
 def findMax(board):
+    index = [-1, -1, -1]
+
+    # Run cpp file
     os.system('cppexe.exe')
-    val = -2
-    index = (-1, -1, -1)
+
+    # Print Matrix
     for i in range(3):
         for j in range(3):
             for k in range(3):
-                if board[i][j][k] == 0:
-                    board[i][j][k] = 2
-                    t = miniMax(board, 1, 0, 1)
-                    board[i][j][k] = 0
-                    if t > val:
-                        val = t
-                        index = (i, j, k)
-                    if val == 1:
-                        return index
+                print(board[i][j][k], end=' ')
+            print()
+
+    # Take input
+
+    index[0] = int(input())
+    index[1] = int(input())
+    index[2] = int(input())
+
+    # for i in range(3):
+    #     for j in range(3):
+    #         for k in range(3):
+    #             if board[i][j][k] == 0:
+    #                 board[i][j][k] = 2
+    #                 t = miniMax(board, 1, 0, 1)
+    #                 board[i][j][k] = 0
+    #                 if t > val:
+    #                     val = t
+    #                     index = (i, j, k)
+    #                 if val == 1:
+    #                     return index
+
     return index
 
 
