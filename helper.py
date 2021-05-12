@@ -74,9 +74,13 @@ def update(screen, board):
 
 
 def getPoints(event):
-    x = int(int(int(event.pos[0] - 50) / WI) % 3)
-    y = int(int(int(event.pos[1] - 50) / WI) % 3)
-    z = int(int(int(event.pos[0] - 50) / WI) / 3)
+    x = ((event.pos[0] - 50) // WI) % 3
+    y = ((event.pos[1] - 50) // WI) % 3
+    z = ((event.pos[0] - 50) // WI) // 3
+
+    if int(int(int(event.pos[0] - 50) / WI) / 3) != int(int(int(event.pos[1] - 50) / WI) / 3):
+        z = -1
+
     return x, y, z
 
 
@@ -86,5 +90,14 @@ def format_time(secs):
     minute = secs // 60
     hour = minute // 60
 
-    mat = " " + str(minute) + ":" + str(sec)
+    s = str(sec)
+    m = str(minute)
+
+    if len(s) == 1:
+        s = '0' + s
+
+    if len(m) == 1:
+        m = '0' + m
+
+    mat = " " + m + ":" + s
     return mat

@@ -1,4 +1,8 @@
+import os
+
+
 def findMax(board):
+    os.system('cppexe.exe')
     val = -2
     index = (-1, -1, -1)
     for i in range(3):
@@ -6,15 +10,17 @@ def findMax(board):
             for k in range(3):
                 if board[i][j][k] == 0:
                     board[i][j][k] = 2
-                    t = miniMax(board, 1, 0)
+                    t = miniMax(board, 1, 0, 1)
                     board[i][j][k] = 0
                     if t > val:
                         val = t
                         index = (i, j, k)
+                    if val == 1:
+                        return index
     return index
 
 
-def miniMax(board, turn, depth):
+def miniMax(board, turn, depth, bound):
     # print(turn)
     # viewBoard(board)
 
@@ -29,20 +35,21 @@ def miniMax(board, turn, depth):
         return 0
 
     if turn == 1:
-        val = 2
         for i in range(3):
             for j in range(3):
                 for k in range(3):
                     if board[i][j][k] == 0:
                         board[i][j][k] = turn
-                        t = miniMax(board, turn % 2 + 1, depth + 1)
+                        t = miniMax(board, turn % 2 + 1, depth + 1, )
                         board[i][j][k] = 0
-                        if t < val:
-                            val = t
-        return val
+                        if t < bound:
+                            bound = t
+                        if bound == -1:
+                            return bound
+        return bound
 
     else:
-        val = 2
+        val = -2
         for i in range(3):
             for j in range(3):
                 for k in range(3):
@@ -52,6 +59,8 @@ def miniMax(board, turn, depth):
                         board[i][j][k] = 0
                         if t > val:
                             val = t
+                        if val == 1:
+                            return val
         return val
 
 

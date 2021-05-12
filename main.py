@@ -14,11 +14,11 @@ screen = pygame.display.set_mode(size)
 font = pygame.font.SysFont("comicsans", 40)
 start = time.time()
 
+me = 0
+you = 0
 turn = 1
 playing = True
 x, y, z = (-1, -1, -1)
-you = 0
-me = 0
 
 while playing:
     helper.update(screen, board)
@@ -49,7 +49,7 @@ while playing:
         helper.drawSelected(x, y, z, screen)
 
     if board.isWin(1):
-        text = font.render(' You have won the game ! Right Click to restart ', True, helper.YELLOW, helper.LGREY)
+        text = font.render(' You have won the game ! Right Click to Restart ', True, helper.YELLOW, helper.LGREY)
         textRect = text.get_rect()
         textRect.center = (775/2, 25)
         screen.blit(text, textRect)
@@ -64,20 +64,20 @@ while playing:
         turn = 1
 
     elif not board.isSpace():
-        text = font.render('Draw , Right Click to restart', True, helper.LGREY, helper.LGREY)
+        text = font.render(' Draw , Right Click to Restart', True, helper.LGREY, helper.LGREY)
         textRect = text.get_rect()
         textRect.center = (775/2, 25)
         screen.blit(text, textRect)
         turn = 0
 
     if board.isWin(2):
-        text = font.render(' Bot has won the game ! Right Click to restart ', True, helper.ORANGE, helper.LGREY)
+        text = font.render(' Bot has won the game ! Right Click to Restart ', True, helper.ORANGE, helper.LGREY)
         textRect = text.get_rect()
         textRect.center = (775/2, 25)
         screen.blit(text, textRect)
         turn = 0
 
-    screen.blit(font.render("Time: " + helper.format_time(play_time),
+    screen.blit(font.render(" Time: " + helper.format_time(play_time),
                             True, helper.GREY), (550, 740))
 
     screen.blit(font.render(" You: " + str(you) + "   Bot: " + str(me) + ' ',
