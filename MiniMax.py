@@ -1,11 +1,19 @@
-import os
-
+import subprocess
 
 def findMax(board):
     index = [-1, -1, -1]
 
     # Run cpp file
     # os.system('cppexe.exe')
+    i = 0
+    for i in range(3):
+        boardString = [' '.join([str(c) for c in lst]) for lst in board[i]]
+    boardString = ' '.join(boardString)
+        
+    out = subprocess.run(["./MiniMax"], text=True, input=boardString, stdout=subprocess.PIPE).stdout
+    out = out.splitlines()
+
+    # TODO: `out` is an array of strings, use it
 
     # Print Matrix
     for i in range(3):
