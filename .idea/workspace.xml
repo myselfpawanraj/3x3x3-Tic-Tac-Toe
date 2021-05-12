@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37f61239-df4a-42b7-8889-69c38024bb58" name="Default Changelist" comment="Bug Fix and UI changes">
-      <change afterPath="$PROJECT_DIR$/gitpod.yml" afterDir="false" />
-    </list>
+    <list default="true" id="37f61239-df4a-42b7-8889-69c38024bb58" name="Default Changelist" comment="Bug Fix and UI changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +180,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620844899814</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Bug Fix and UI changes">
+      <created>1620844988794</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1620844988794</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Bug Fix and UI changes">
+      <created>1620845219464</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620845219464</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
