@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37f61239-df4a-42b7-8889-69c38024bb58" name="Default Changelist" comment="Bug Fix and UI changes">
+    <list default="true" id="37f61239-df4a-42b7-8889-69c38024bb58" name="Default Changelist" comment="Alpha beta pruning">
+      <change afterPath="$PROJECT_DIR$/CPP Executables/Programme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitpod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitpod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MiniMax.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MiniMax.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MiniMax.py" beforeDir="false" afterPath="$PROJECT_DIR$/MiniMax.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programme.exe" beforeDir="false" afterPath="$PROJECT_DIR$/CPP Executables/Programme.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +48,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Coding\3D-Tic-Tac-Toe-main\CPP Executables" />
       <recent name="D:\Coding\3D-Tic-Tac-Toe-main" />
     </key>
   </component>
@@ -211,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620848132497</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Alpha beta pruning">
+      <created>1620912191760</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1620912191760</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,6 +248,7 @@
     <MESSAGE value="UI improve" />
     <MESSAGE value="C++ file added" />
     <MESSAGE value="Bug Fix and UI changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bug Fix and UI changes" />
+    <MESSAGE value="Alpha beta pruning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alpha beta pruning" />
   </component>
 </project>

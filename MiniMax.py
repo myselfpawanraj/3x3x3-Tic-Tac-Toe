@@ -19,11 +19,11 @@ def findMax(board):
     # Run cpp file
 
     if platform == "linux" or platform == "linux2":
-        out = subprocess.run(["./Programme"], text=True, input=boardString, stdout=subprocess.PIPE).stdout
+        out = subprocess.run(["./CPP Executables/Programme"], text=True, input=boardString, stdout=subprocess.PIPE).stdout
     elif platform == "darwin":
-        out = subprocess.run(["./Programme"], text=True, input=boardString, stdout=subprocess.PIPE).stdout
+        out = subprocess.run(["./CPP Executables/Programme"], text=True, input=boardString, stdout=subprocess.PIPE).stdout
     elif platform == "win32":
-        out = subprocess.run(["./Programme.exe"], text=True, input=boardString, stdout=subprocess.PIPE).stdout
+        out = subprocess.run(["./CPP Executables/Programme.exe"], text=True, input=boardString, stdout=subprocess.PIPE).stdout
 
     # Take input
 

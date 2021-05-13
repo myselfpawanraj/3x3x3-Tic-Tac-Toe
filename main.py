@@ -16,7 +16,6 @@ size = (775, 775)
 screen = pygame.display.set_mode(size)
 font = pygame.font.SysFont("comicsans", 40)
 font2 = pygame.font.SysFont("consolas", 18)
-print(pygame.font.get_fonts())
 start = time.time()
 
 me, you, turn = 0, 0, 1
