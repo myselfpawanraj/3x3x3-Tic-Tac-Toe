@@ -1,11 +1,19 @@
+// Minimax algorithm (Alpha-Beta Pruning) for a 3D Tic-Tac-Toe
+// Author: Pawan Raj
+// Repo URl: https://github.com/myselfpawanraj/3D-Tic-Tac-Toe
+
 #include <bits/stdc++.h>
 using namespace std;
-#define F(i, n) for (int i = 0; i < n; i++)
 
-const int N = 3;
-const int inf = 6;
+#define F(i, n) for (int i = 0; i < n; i++)
+#define N 3
+#define inf 6
+#define maxDepth 5
+
 char board[N][N][N];
 
+
+// function to check if there is space in board 
 bool isComplete(){
 	F(i, N) F(j, N) F(k, N) {
 		if(board[i][j][k] == '0')
@@ -14,6 +22,7 @@ bool isComplete(){
 	return 1;
 }
 
+// function to check if the value won the game
 bool isWin(char val){
 	
     // To check 2D Diagonal lines
@@ -75,69 +84,97 @@ bool isWin(char val){
     return 0;
 }
 
-int minimax(int depth, int turn) {
+// Implementation of algorithm
+int minimax(int depth, int turn, int alpha, int beta) {
+	
+	// Terminating conditions
 	
     if (isWin('2'))
-        return 6-depth;
+        return maxDepth+1-depth;
     if (isWin('1'))
-        return depth-6;
+        return depth-maxDepth-1;
     if (isComplete())
         return 0;
-    if (depth >= 4)
+    if (depth >= maxDepth)
         return 0;
     
+    
+    
+    int best_val, val;
     if(turn == 1) {
-    	int val = inf;
+    	best_val = inf;
     	F(i, N) F(j, N) F(k, N){
 			if (board[i][j][k] == '0') {
 				board[i][j][k] = '1';
-				int t = minimax(depth+1, 2);
-				val = min(val, t);
-				board[i][j][k] = '0';			
+				val = minimax(depth+1, 2, alpha, beta);
+				board[i][j][k] = '0';				
+				
+				
+				best_val = min(best_val, val);
+				beta = min(beta, best_val);
+				
+				if(beta <= alpha){
+					return best_val;
+				}
 			}
 		}
-		return val;
+		return best_val;
     }
     else {
-    	int val = -inf;
+    	best_val = -inf;
     	F(i, N) F(j, N) F(k, N){
 			if (board[i][j][k] == '0') {
 				board[i][j][k] = '2';
-				int t = minimax(depth+1, 1);
-				val = max(val, t);
+				val = minimax(depth+1, 1, alpha, beta);
 				board[i][j][k] = '0';
+				
+				best_val = max(best_val, val);
+				alpha = max(alpha, best_val);
+				
+				if(beta <= alpha){
+					return best_val;
+				}
 			}
 		}
-		return val;
+		return best_val;
     }
     
 }
 
-int32_t main() {
+// Driving Code
+int main() {
+	
+	// Taking Inputs
 	
 	F(i, N) F(j, N) F(k, N){
 		cin >> board[i][j][k];
 	}
+	
 	int a[3] = {-1, -1, -1};
-	int val = -10;
+	int val = -inf;
+	
 	F(i, N) F(j, N) F(k, N){
 		if (board[i][j][k] == '0') {
 			board[i][j][k] = '2';
-			int t = minimax(0, 1);
+			int t = minimax(0, 1, -inf, inf);
 			if(t > val){
 				val = t;
 				a[0] = i;
 				a[1] = j;
 				a[2] = k;
 			}
-			// cout << i <<" "<< j <<" "<< k <<" = " << t << '\n';
 			board[i][j][k] = '0';			
 		}
 	}
-	// cout << a[0] <<"\n";
-	// cout << a[1] <<"\n";
-	// cout << a[2] <<"\n";
-	// cout << "\n\n";
+	
+	// Printing the cooardinates
+	
+	cout << a[0] <<"\n";
+	cout << a[1] <<"\n";
+	cout << a[2] <<"\n";
+	
+	/*
+	To display the board
 	
 	board[a[0]][a[1]][a[2]] = '2';
 	F(i, N) F(j, N) {
@@ -146,5 +183,6 @@ int32_t main() {
 		}
 		cout << '\n';
 	}
+	*/
     return 0;
 }
