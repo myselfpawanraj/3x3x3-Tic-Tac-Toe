@@ -38,9 +38,9 @@ def drawSelected(i, j, k, screen):
     pygame.draw.line(screen, RED, [50 + WI * i + WI * 3 * k, 50 + WI * j + WI * 3 * k],
                      [50 + WI * i + WI * 3 * k, 50 + WI * (j + 1) + WI * 3 * k], 2)
     pygame.draw.line(screen, RED, [50 + WI * (i + 1) + WI * 3 * k, 50 + WI * j + WI * 3 * k],
-                     [50 + WI * (i + 1) + WI * 3 * k, 50 + WI * (j + 1) + WI * 3 * k], 2)
+                     [50 + WI * (i + 1) + WI * 3 * k, 50 + WI * (j + 1) + WI * 3 * k], 4)
     pygame.draw.line(screen, RED, [50 + WI * i + WI * 3 * k, 50 + WI * (j + 1) + WI * 3 * k],
-                     [50 + WI * (i + 1) + WI * 3 * k, 50 + WI * (j + 1) + WI * 3 * k], 2)
+                     [50 + WI * (i + 1) + WI * 3 * k, 50 + WI * (j + 1) + WI * 3 * k], 4)
 
 
 def update(screen, board):
@@ -62,7 +62,7 @@ def update(screen, board):
 
     pygame.draw.line(screen, RED, [50, 275], [500, 725], 2)
     pygame.draw.line(screen, RED, [275, 50], [725, 500], 2)
-    pygame.draw.line(screen, RED, [275, 275], [725, 725], 2)
+    # pygame.draw.line(screen, RED, [275, 275], [725, 725], 2)
 
     for i in range(0, 3):
         for j in range(0, 3):
@@ -88,7 +88,6 @@ def format_time(secs):
     secs = int(secs)
     sec = secs % 60
     minute = secs // 60
-    hour = minute // 60
 
     s = str(sec)
     m = str(minute)
