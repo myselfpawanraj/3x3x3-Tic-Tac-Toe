@@ -2,6 +2,7 @@
 // Author: Pawan Raj
 // Repo URl: https://github.com/myselfpawanraj/3D-Tic-Tac-Toe
 
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -141,8 +142,7 @@ int minimax(int depth, int turn, int alpha, int beta) {
     
 }
 
-// Driving Code
-int main() {
+int32_t main() {
 	
 	// Taking Inputs
 	
