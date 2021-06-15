@@ -5,9 +5,15 @@ from sys import platform
 class Board:
 
     def __init__(self):
-        self.matrix = [[[0, 0, 0], [0, 0, 0], [0, 0, 0]],
-                       [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
-                       [[0, 0, 0], [0, 0, 0], [0, 0, 0]]]
+        self.__matrix = [[[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+                         [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+                         [[0, 0, 0], [0, 0, 0], [0, 0, 0]]]
+
+    def getPosition(self, x, y, z):
+        return self.__matrix[x][y][z]
+
+    def setPosition(self, x, y, z, val):
+        self.__matrix[x][y][z] = val
 
     def findMax(self):
         index = [-1, -1, -1]
@@ -19,7 +25,7 @@ class Board:
         for i in range(3):
             for j in range(3):
                 for k in range(3):
-                    boardString += (' ' + str(self.matrix[i][j][k]))
+                    boardString += (' ' + str(self.__matrix[i][j][k]))
 
         print(boardString)
 
@@ -50,7 +56,7 @@ class Board:
         for i in range(0, 3):
             for j in range(0, 3):
                 for k in range(0, 3):
-                    if self.matrix[i][j][k] == 0:
+                    if self.__matrix[i][j][k] == 0:
                         return True
         return False
 
@@ -58,16 +64,16 @@ class Board:
 
         # To check diagonal lines of the cube
 
-        if self.matrix[0][0][0] == val & self.matrix[1][1][1] == val & self.matrix[2][2][2] == val:
+        if self.__matrix[0][0][0] == val & self.__matrix[1][1][1] == val & self.__matrix[2][2][2] == val:
             return True
 
-        if self.matrix[0][0][2] == val & self.matrix[1][1][1] == val & self.matrix[2][2][0] == val:
+        if self.__matrix[0][0][2] == val & self.__matrix[1][1][1] == val & self.__matrix[2][2][0] == val:
             return True
 
-        if self.matrix[2][0][0] == val & self.matrix[1][1][1] == val & self.matrix[0][2][2] == val:
+        if self.__matrix[2][0][0] == val & self.__matrix[1][1][1] == val & self.__matrix[0][2][2] == val:
             return True
 
-        if self.matrix[2][0][2] == val & self.matrix[1][1][1] == val & self.matrix[0][2][0] == val:
+        if self.__matrix[2][0][2] == val & self.__matrix[1][1][1] == val & self.__matrix[0][2][0] == val:
             return True
 
         # To check straight lines
@@ -78,41 +84,41 @@ class Board:
 
                 temp = True
                 for k in range(0, 3):
-                    if self.matrix[i][j][k] != val:
+                    if self.__matrix[i][j][k] != val:
                         temp = False
                 poss |= temp
 
                 temp = True
                 for k in range(0, 3):
-                    if self.matrix[i][k][j] != val:
+                    if self.__matrix[i][k][j] != val:
                         temp = False
                 poss |= temp
 
                 temp = True
                 for k in range(0, 3):
-                    if self.matrix[k][i][j] != val:
+                    if self.__matrix[k][i][j] != val:
                         temp = False
                 poss |= temp
 
         # To check 2D Diagonal lines
 
         for i in range(0, 3):
-            if self.matrix[0][0][i] == val & self.matrix[1][1][i] == val & self.matrix[2][2][i] == val:
+            if self.__matrix[0][0][i] == val & self.__matrix[1][1][i] == val & self.__matrix[2][2][i] == val:
                 return True
 
-            if self.matrix[2][0][i] == val & self.matrix[1][1][i] == val & self.matrix[0][2][i] == val:
+            if self.__matrix[2][0][i] == val & self.__matrix[1][1][i] == val & self.__matrix[0][2][i] == val:
                 return True
 
-            if self.matrix[0][i][0] == val & self.matrix[1][i][1] == val & self.matrix[2][i][2] == val:
+            if self.__matrix[0][i][0] == val & self.__matrix[1][i][1] == val & self.__matrix[2][i][2] == val:
                 return True
 
-            if self.matrix[2][i][0] == val & self.matrix[1][i][1] == val & self.matrix[0][i][2] == val:
+            if self.__matrix[2][i][0] == val & self.__matrix[1][i][1] == val & self.__matrix[0][i][2] == val:
                 return True
 
-            if self.matrix[i][0][0] == val & self.matrix[i][1][1] == val & self.matrix[i][2][2] == val:
+            if self.__matrix[i][0][0] == val & self.__matrix[i][1][1] == val & self.__matrix[i][2][2] == val:
                 return True
 
-            if self.matrix[i][2][0] == val & self.matrix[i][1][1] == val & self.matrix[i][0][2] == val:
+            if self.__matrix[i][2][0] == val & self.__matrix[i][1][1] == val & self.__matrix[i][0][2] == val:
                 return True
 
         return poss
@@ -124,9 +130,9 @@ class Board:
             for j in range(0, 3):
                 print('|', end='')
                 for k in range(0, 3):
-                    if self.matrix[i][j][k] == 0:
+                    if self.__matrix[i][j][k] == 0:
                         print(' ', end='|')
-                    elif self.matrix[i][j][k] == 1:
+                    elif self.__matrix[i][j][k] == 1:
                         print('X', end='|')
                     else:
                         print('O', end='|')

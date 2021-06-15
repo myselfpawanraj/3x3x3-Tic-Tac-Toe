@@ -71,9 +71,9 @@ def renderBoard(screen, board):
     for i in range(0, 3):
         for j in range(0, 3):
             for k in range(0, 3):
-                if board.matrix[i][j][k] == 1:
+                if board.getPosition(i, j, k) == 1:
                     drawX(i, j, k, screen)
-                elif board.matrix[i][j][k] == 2:
+                elif board.getPosition(i, j, k) == 2:
                     drawO(i, j, k, screen)
 
 

@@ -34,7 +34,7 @@ def initBoard():
         i = random.randint(0, 2)
         j = random.randint(0, 2)
         k = random.randint(0, 2)
-        board.matrix[i][j][k] = 2
+        board.setPosition(i, j, k, 2)
         x, y, z = (-1, -1, -1)
 
     View.showMode(screen, MODE, font, font2)
@@ -59,8 +59,8 @@ while playing:
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 if (0 <= x <= 2) & (0 <= y <= 2) & (0 <= z <= 2):
-                    if board.matrix[x][y][z] == 0 and turn == 1:
-                        board.matrix[x][y][z] = 1
+                    if board.getPosition(x, y, z) == 0 and turn == 1:
+                        board.setPosition(x, y, z, 1)
                         if board.isWin(1):
                             you += 1
                         turn = 2
@@ -83,7 +83,7 @@ while playing:
         pygame.display.flip()
         a, b, c = board.findMax()
         if (0 <= a <= 2) & (0 <= b <= 2) & (0 <= c <= 2):
-            board.matrix[a][b][c] = 2
+            board.setPosition(a, b, c, 2)
             if board.isWin(2):
                 me += 1
         turn = 1
