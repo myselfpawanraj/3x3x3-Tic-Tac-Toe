@@ -1,5 +1,5 @@
 # 3x3x3 TTT
-This is a 3D tic-tac-toe using the minimax algorithm with alpha beta pruning. It includes a graphical GUI to make it interesting.
+This is a 3D tic-tac-toe using the minimax algorithm with alpha beta pruning. It includes a GUI to make it interesting.
 
 Run main.py to play it.
 
