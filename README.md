@@ -1,13 +1,13 @@
 ## 3x3x3 TTT
-This is a 3D tic-tac-toe using the minimax algorithm with alpha beta pruning. It includes a GUI to make it interesting.
+This is a 3D tic-tac-toe using the minimax algorithm with alpha-beta pruning. It includes a GUI to make it enjoyable.
 
 Run main.py to play it.
 
 ### Rules
 - The game is played on a grid that's 3 by 3 by 3 squares.
-- You are **X**, your friend (or the computer in this case) is **O**. Players take turns putting their marks in empty squares.
+- You are **X**, and your friend (or the computer in this case) is **O**. Players take turns putting their marks in empty squares.
 - The first player to get 3 of her marks in a row (up, down, across, or diagonally across the face or the cube) is the winner.
-- When all 27 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+- When all 27 squares are full, the game is over. The game ends in a tie if no player has 3 marks in a row.
 
 ### Instructions
 - Click an empty box to make your move
@@ -17,7 +17,7 @@ Run main.py to play it.
 ### Tech Used
 - **Python** to code the game
 - Minimax program is written in **C++** to make it overall faster
-- **Pygame** for GUI of the game
+- **Pygame** for the GUI of the game
 - **GIT** for Version Control
 
 
